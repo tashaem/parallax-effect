@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; /* one of the KP's */
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.boxes {
+	height: 100vh; /*one of the KP's -> vh/vw */
+	width: 100%;
+	background-size: cover; /*one of the KP's ->  background-size property*/
+	background-position: center; 
+	display: table;
+	background-attachment: fixed; /*main way to make parallax with just CSS -> this line makes the bg image not scroll with the page*/
+
+}
+
+#box1 {
+	background-image: url(https://studioghiblimovies.com/wp-content/uploads/2020/03/barcode-scanners-qr-code-2d-code-creative-barcode.jpg);
+}
+
+/* #box2 {
+	background-image: url(https://studioghiblimovies.com/wp-content/uploads/2019/02/t7naq3mc3egpaqeb5luuuhjt6dgiqx5r_hq.jpg);
+} */
+
+#box3 {
+	background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/88/95/4HIKRn.jpg);
+	object-fit: cover;
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 48px;
+	color:  #fff;
+	margin: 0px;
+	text-align: center;
+	display: table-cell; /*part of 3rd KP*/
+	vertical-align: middle;
+}
+
+#box2 {
+	position: relative;
+	padding: 20% 100px; 
+	background-color: black;
+}
+
+#box2 > p {
+	color: white;
+	font-size: 150%;
+}
+
+#box1::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(to top,black,transparent);
+}
+
+#box3:before {
+	content: 'test';
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(to bottom,black,transparent);
+}
+
+#box1{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#cloud1 {
+  margin-top: -1000px; 
+  position: absolute;
+  transform: translateZ(-3);
+  //z-index: -3;
+  width: 800px;
+  opacity: 0.6;
+  animation: slideRight 100s infinite;
+  filter: drop-shadow(5px 5px 5px #222222);
+}
+
+#cloud2 {
+  position: absolute;
+  margin-top: -1200px;
+  right: 10px;
+  transform: translateZ(-1);
+  //z-index: -1;
+  width: 500px;
+  opacity: 0.8;
+  animation: slideLeft 50s infinite;
+  filter: drop-shadow(5px 5px 5px #222222);
+}
+
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
